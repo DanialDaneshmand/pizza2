@@ -35,3 +35,9 @@
     background-color: #fff;
     border-left: 1px solid #fff;
 }
+
+/* styles of footer */
+
+.send__icon{
+    margin-left: -55px;
+}
