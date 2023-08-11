@@ -41,3 +41,14 @@
 .send__icon{
     margin-left: -55px;
 }
+
+/* styles of category */
+
+.category__icon{
+    transition: .3s;
+    border-radius: 3px;
+}
+
+.category__icon:hover{
+    margin-top: -15px;
+}

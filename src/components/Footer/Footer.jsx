@@ -48,7 +48,7 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="flex justify-center gap-4 py-4">
+      <div className="flex justify-center gap-4 py-8">
         <span className="text-slate-900 font-bold"> follow :</span>
         <FaWhatsappSquare className="ml-3 text-xl text-orange-600 " />
         <FaTelegram className="ml-3 text-xl text-orange-600 " />
