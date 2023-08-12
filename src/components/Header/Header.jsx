@@ -30,6 +30,7 @@ const Header = () => {
         <div className={`${active ? "md:block hidden" : "navigation"}`}>
           {items.map((item) => (
             <NavLink
+              key={item.display}
               onClick={() => {
                 setActive(true);
               }}

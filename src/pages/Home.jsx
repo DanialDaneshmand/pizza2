@@ -1,10 +1,71 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import heroImg from "../assets/images/hero.png";
 import { FaCar } from "react-icons/fa";
 import { FaShieldHalved } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import Category from "../components/UI/Category";
+
+import featureImg01 from "../assets/images/service-01.png";
+import featureImg02 from "../assets/images/service-02.png";
+import featureImg03 from "../assets/images/service-03.png";
+
+import foodCategoryImg01 from "../assets/images/hamburger.png";
+import foodCategoryImg02 from "../assets/images/pizza.png";
+import foodCategoryImg03 from "../assets/images/bread.png";
+
+import products from "../assets/fake-data/products";
+import Product from "../components/UI/Product";
+
+const featureData = [
+  {
+    title: "Quick Delivery",
+    imgUrl: featureImg01,
+    desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor, minima.",
+  },
+  {
+    title: "Super Dine In",
+    imgUrl: featureImg02,
+    desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor, minima.",
+  },
+  {
+    title: "Easy Pick Up",
+    imgUrl: featureImg03,
+    desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor, minima.",
+  },
+];
+
 function Home() {
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [filter, setFilter] = useState("all");
+
+  useEffect(() => {
+    setFilteredProducts(products);
+  }, []);
+
+  const clickHandler = (f) => {
+    setFilter(f);
+    if (f === "all") {
+      setFilteredProducts(products);
+    }
+    if (f === "Burger") {
+      const updatedProducts = products.filter(
+        (product) => product.category === f
+      );
+      setFilteredProducts(updatedProducts);
+    }
+    if (f === "Pizza") {
+      const updatedProducts = products.filter(
+        (product) => product.category === f
+      );
+      setFilteredProducts(updatedProducts);
+    }
+    if (f === "Bread") {
+      const updatedProducts = products.filter(
+        (product) => product.category === f
+      );
+      setFilteredProducts(updatedProducts);
+    }
+  };
   return (
     <>
       <section className="grid lg:grid-cols-2">
@@ -25,7 +86,7 @@ function Home() {
             طراحان گرافیک است
           </p>
           <div className="flex gap-8 items-center">
-            <button className="text-sm hover:bg-slate-800 rounded-lg bg-orange-600 text-white py-2 px-4 ">
+            <button className="text-sm hover:bg-slate-800 rounded-lg bg-orange-600 text-white py-3 px-4 ">
               حالا سفارش دهید
             </button>
             <button className="font-bold border border-orange-600 text-orange-600 py-2 px-4 rounded-lg">
@@ -55,6 +116,82 @@ function Home() {
       </section>
       <section>
         <Category />
+      </section>
+      <section className="flex items-center flex-col px-16">
+        <p className="text-xl text-orange-600 font-bold mb-4">what we serve</p>
+        <p className="p-6 md:p-0 text-2xl lg:text-4xl font-bold mb-8 w-[400px] text-center">
+          just sit back at home we will{" "}
+          <span className="text-orange-600">take care</span>
+        </p>
+        <p className="mb-2 text-gray-600 text-sm text-center">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet,
+          voluptatem.
+        </p>
+        <p className="mb-16 text-gray-600 text-sm text-center">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet,
+          voluptatem.
+        </p>
+      </section>
+      <section className="grid md:grid-cols-3 gap-8 md:gap-0 text-center mb-16">
+        {featureData.map((item, index) => (
+          <div
+            key={index}
+            className="ml-16  w-8/12 flex  justify-center items-center"
+          >
+            <div className="flex flex-col items-center">
+              <img src={item.imgUrl} alt={item.title} className="w-4/12 mb-3" />
+              <p className="text-lg font-bold mb-1">{item.title}</p>
+              <p className="text-center text-gray-600 text-sm">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </section>
+      <section>
+        <div className="text-center mb-16">
+          <p className="text-4xl font-bold">Popular Foods</p>
+        </div>
+        <div className="flex justify-center flex-col items-center mb-16">
+          <div className="bg-orange-600 rounded py-6 w-9/12 flex justify-center items-center gap-6">
+            <button
+              onClick={() => clickHandler("all")}
+              className={`${filter === "all" && "active"}`}
+            >
+              All Foods
+            </button>
+            <button
+              onClick={() => clickHandler("Burger")}
+              className={`flex justify-center items-center gap-1 ${
+                filter === "Burger" && "active"
+              }`}
+            >
+              <img src={foodCategoryImg01} alt="" className="w-6" />
+              <span>Burger</span>
+            </button>
+            <button
+              onClick={() => clickHandler("Pizza")}
+              className={`flex justify-center items-center gap-1 ${
+                filter === "Pizza" && "active"
+              }`}
+            >
+              <img src={foodCategoryImg02} alt="" className="w-6" />
+              <span>Pizza</span>
+            </button>
+            <button
+              onClick={() => clickHandler("Bread")}
+              className={`flex justify-center items-center gap-1 ${
+                filter === "Bread" && "active"
+              }`}
+            >
+              <img src={foodCategoryImg03} alt="" className="w-6" />
+              <span>Bread</span>
+            </button>
+          </div>
+          <div className="grid grid-cols-4 gap-8 px-32 mt-16">
+            {filteredProducts.map((product, index) => (
+              <Product product={product} key={index}/>
+            ))}
+          </div>
+        </div>
       </section>
     </>
   );

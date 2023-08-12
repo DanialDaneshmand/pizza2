@@ -52,3 +52,11 @@
 .category__icon:hover{
     margin-top: -15px;
 }
+
+/* styles of foodCategory */
+
+.active{
+    background-color: #fff;
+    padding: 4px 6px;
+    border-radius: 3px;
+}
