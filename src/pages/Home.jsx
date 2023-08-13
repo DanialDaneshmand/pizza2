@@ -16,6 +16,8 @@ import foodCategoryImg03 from "../assets/images/bread.png";
 import products from "../assets/fake-data/products";
 import Product from "../components/UI/Product";
 
+import WhyTastyComp from "../components/UI/WhyTastyComp";
+
 const featureData = [
   {
     title: "Quick Delivery",
@@ -110,8 +112,8 @@ function Home() {
             </p>
           </div>
         </div>
-        <div className="order-1 lg:order-2 w-11/12 lg:w-full">
-          <img src={heroImg} alt="hero" />
+        <div className="order-1 lg:order-2 w-11/12 lg:w-full flex justify-center items-center">
+          <img src={heroImg} alt="hero" className="w-9/12 md:w-full" />
         </div>
       </section>
       <section>
@@ -186,12 +188,15 @@ function Home() {
               <span>Bread</span>
             </button>
           </div>
-          <div className="grid grid-cols-4 gap-8 px-32 mt-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 px-32 mt-16">
             {filteredProducts.map((product, index) => (
-              <Product product={product} key={index}/>
+              <Product product={product} key={index} />
             ))}
           </div>
         </div>
+      </section>
+      <section>
+        <WhyTastyComp />
       </section>
     </>
   );
