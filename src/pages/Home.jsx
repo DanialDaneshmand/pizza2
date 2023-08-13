@@ -16,6 +16,9 @@ import WhyTastyComp from "../components/UI/WhyTastyComp";
 import FoodsCategory from "../components/UI/FoodsCategory";
 import ProductList from "../components/ProductList/ProductList";
 
+import networkImg from "../assets/images/network.png";
+import TestImonialSlider from "../components/UI/TestImonialSlider";
+
 const featureData = [
   {
     title: "Quick Delivery",
@@ -79,6 +82,7 @@ function Home() {
         <WhyTastyComp />
       </section>
       <HotPizzaComp />
+      <CommentsComp />
     </>
   );
 }
@@ -181,11 +185,34 @@ function HotPizzaComp() {
   }, []);
   return (
     <section>
-      <div className="text-center text-2xl md:text-4xl font-bold">Hot Pizza</div>
+      <div className="text-center text-2xl md:text-4xl font-bold">
+        Hot Pizza
+      </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 px-32 mt-16">
         {hotPizaa.map((item, index) => (
           <Product key={index} product={item} />
         ))}
+      </div>
+    </section>
+  );
+}
+
+function CommentsComp() {
+  return (
+    <section className="grid grid-cols-1 lg:grid-cols-2 my-32 items-center">
+      <div className="px-28 order-2 lg:order-1">
+        <p className="text-orange-600 text-lg font-bold">Testimonial</p>
+        <p className="md:text-3xl text-2xl font-bold my-6">
+          What our <span className="text-orange-600">customers</span> are saying
+        </p>
+        <p className="text-sm text-gray-500 mb-16">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
+          quos commodi dolorem, minima placeat ullam? minima placeat ullam?
+        </p>
+        <TestImonialSlider/>
+      </div>
+      <div className="flex justify-center order-1 lg:order-2">
+        <img src={networkImg} alt="network" className="lg:w-full w-10/12"/>
       </div>
     </section>
   );
