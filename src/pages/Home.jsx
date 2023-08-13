@@ -9,14 +9,12 @@ import featureImg01 from "../assets/images/service-01.png";
 import featureImg02 from "../assets/images/service-02.png";
 import featureImg03 from "../assets/images/service-03.png";
 
-import foodCategoryImg01 from "../assets/images/hamburger.png";
-import foodCategoryImg02 from "../assets/images/pizza.png";
-import foodCategoryImg03 from "../assets/images/bread.png";
-
 import products from "../assets/fake-data/products";
 import Product from "../components/UI/Product";
 
 import WhyTastyComp from "../components/UI/WhyTastyComp";
+import FoodsCategory from "../components/UI/FoodsCategory";
+import ProductList from "../components/ProductList/ProductList";
 
 const featureData = [
   {
@@ -70,55 +68,25 @@ function Home() {
   };
   return (
     <>
-      <section className="grid lg:grid-cols-2">
-        <div
-          style={{ direction: "rtl" }}
-          className="order-2 lg:order-1  flex flex-col gap-8 px-16 pb-16 md:py-16 lg:py-32 text-slate-900"
-        >
-          <p className="text-xl  lg:text-2xl font-bold">
-            راهی اسان برای سفارش دادن
-          </p>
-          <p className="text-2xl  lg:text-4xl font-bold">
-            <span className="text-orange-600">گرسنه ای ؟</span>یه لحظه صبر کنی
-            غذا <span className="text-orange-600">پشت دره</span>
-          </p>
-          <p className=" text-gray-500" style={{ maxWidth: "550px" }}>
-            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
-            استفاده از طراحان است، چاپگرها و متون بلکه از طراحان گرافیک است از
-            طراحان گرافیک است
-          </p>
-          <div className="flex gap-8 items-center">
-            <button className="text-sm hover:bg-slate-800 rounded-lg bg-orange-600 text-white py-3 px-4 ">
-              حالا سفارش دهید
-            </button>
-            <button className="font-bold border border-orange-600 text-orange-600 py-2 px-4 rounded-lg">
-              <Link to="/foods" className="text-sm ">
-                مشاهده غذاها
-              </Link>
-            </button>
-          </div>
-          <div className="flex gap-16">
-            <p className="flex gap-2 items-center">
-              <span className="p-1 inline-block bg-orange-600 text-white rounded-full">
-                <FaShieldHalved />
-              </span>
-              <span className="text-sm ">پرداختی ایمن</span>
-            </p>
-            <p className="flex gap-1 items-center">
-              <span className="p-1 inline-block bg-orange-600 text-white rounded-full">
-                <FaCar />
-              </span>
-              <span>پیک رایگان</span>
-            </p>
-          </div>
-        </div>
-        <div className="order-1 lg:order-2 w-11/12 lg:w-full flex justify-center items-center">
-          <img src={heroImg} alt="hero" className="w-9/12 md:w-full" />
-        </div>
-      </section>
+      <InformationComp />
       <section>
         <Category />
       </section>
+      <WhatWeServeComp featureData={featureData} />
+      <FoodsCategory filter={filter} clickHandler={clickHandler} />
+      <ProductList filteredProducts={filteredProducts} />
+      <section>
+        <WhyTastyComp />
+      </section>
+    </>
+  );
+}
+
+export default Home;
+
+function WhatWeServeComp({ featureData }) {
+  return (
+    <>
       <section className="flex items-center flex-col px-16">
         <p className="text-xl text-orange-600 font-bold mb-4">what we serve</p>
         <p className="p-6 md:p-0 text-2xl lg:text-4xl font-bold mb-8 w-[400px] text-center">
@@ -148,58 +116,57 @@ function Home() {
           </div>
         ))}
       </section>
-      <section>
-        <div className="text-center mb-16">
-          <p className="text-4xl font-bold">Popular Foods</p>
-        </div>
-        <div className="flex justify-center flex-col items-center mb-16">
-          <div className="bg-orange-600 rounded py-6 w-9/12 flex justify-center items-center gap-6">
-            <button
-              onClick={() => clickHandler("all")}
-              className={`${filter === "all" && "active"}`}
-            >
-              All Foods
-            </button>
-            <button
-              onClick={() => clickHandler("Burger")}
-              className={`flex justify-center items-center gap-1 ${
-                filter === "Burger" && "active"
-              }`}
-            >
-              <img src={foodCategoryImg01} alt="" className="w-6" />
-              <span>Burger</span>
-            </button>
-            <button
-              onClick={() => clickHandler("Pizza")}
-              className={`flex justify-center items-center gap-1 ${
-                filter === "Pizza" && "active"
-              }`}
-            >
-              <img src={foodCategoryImg02} alt="" className="w-6" />
-              <span>Pizza</span>
-            </button>
-            <button
-              onClick={() => clickHandler("Bread")}
-              className={`flex justify-center items-center gap-1 ${
-                filter === "Bread" && "active"
-              }`}
-            >
-              <img src={foodCategoryImg03} alt="" className="w-6" />
-              <span>Bread</span>
-            </button>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 px-32 mt-16">
-            {filteredProducts.map((product, index) => (
-              <Product product={product} key={index} />
-            ))}
-          </div>
-        </div>
-      </section>
-      <section>
-        <WhyTastyComp />
-      </section>
     </>
   );
 }
 
-export default Home;
+function InformationComp() {
+  return (
+    <section className="grid lg:grid-cols-2">
+      <div
+        style={{ direction: "rtl" }}
+        className="order-2 lg:order-1  flex flex-col gap-8 px-16 pb-16 md:py-16 lg:py-32 text-slate-900"
+      >
+        <p className="text-xl  lg:text-2xl font-bold">
+          راهی اسان برای سفارش دادن
+        </p>
+        <p className="text-2xl  lg:text-4xl font-bold">
+          <span className="text-orange-600">گرسنه ای ؟</span>یه لحظه صبر کنی غذا{" "}
+          <span className="text-orange-600">پشت دره</span>
+        </p>
+        <p className=" text-gray-500" style={{ maxWidth: "550px" }}>
+          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+          استفاده از طراحان است، چاپگرها و متون بلکه از طراحان گرافیک است از
+          طراحان گرافیک است
+        </p>
+        <div className="flex gap-8 items-center">
+          <button className="text-sm hover:bg-slate-800 rounded-lg bg-orange-600 text-white py-3 px-4 ">
+            حالا سفارش دهید
+          </button>
+          <button className="font-bold border border-orange-600 text-orange-600 py-2 px-4 rounded-lg">
+            <Link to="/foods" className="text-sm ">
+              مشاهده غذاها
+            </Link>
+          </button>
+        </div>
+        <div className="flex gap-16">
+          <p className="flex gap-2 items-center">
+            <span className="p-1 inline-block bg-orange-600 text-white rounded-full">
+              <FaShieldHalved />
+            </span>
+            <span className="text-sm ">پرداختی ایمن</span>
+          </p>
+          <p className="flex gap-1 items-center">
+            <span className="p-1 inline-block bg-orange-600 text-white rounded-full">
+              <FaCar />
+            </span>
+            <span>پیک رایگان</span>
+          </p>
+        </div>
+      </div>
+      <div className="order-1 lg:order-2 w-11/12 lg:w-full flex justify-center items-center">
+        <img src={heroImg} alt="hero" className="w-9/12 md:w-full" />
+      </div>
+    </section>
+  );
+}
