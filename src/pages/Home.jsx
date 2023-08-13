@@ -78,6 +78,7 @@ function Home() {
       <section>
         <WhyTastyComp />
       </section>
+      <HotPizzaComp />
     </>
   );
 }
@@ -166,6 +167,25 @@ function InformationComp() {
       </div>
       <div className="order-1 lg:order-2 w-11/12 lg:w-full flex justify-center items-center">
         <img src={heroImg} alt="hero" className="w-9/12 md:w-full" />
+      </div>
+    </section>
+  );
+}
+
+function HotPizzaComp() {
+  const [hotPizaa, setHotPizza] = useState([]);
+  useEffect(() => {
+    const filteredPizaa = products.filter((item) => item.category === "Pizza");
+    const slicePizza = filteredPizaa.slice(0, 4);
+    setHotPizza(slicePizza);
+  }, []);
+  return (
+    <section>
+      <div className="text-center text-2xl md:text-4xl font-bold">Hot Pizza</div>
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 px-32 mt-16">
+        {hotPizaa.map((item, index) => (
+          <Product key={index} product={item} />
+        ))}
       </div>
     </section>
   );
