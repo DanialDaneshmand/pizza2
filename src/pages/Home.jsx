@@ -127,10 +127,10 @@ function WhatWeServeComp({ featureData }) {
 
 function InformationComp() {
   return (
-    <section className="grid lg:grid-cols-2">
+    <section className="grid lg:grid-cols-2 pt-32">
       <div
         style={{ direction: "rtl" }}
-        className="order-2 lg:order-1  flex flex-col gap-8 px-16 pb-16 md:py-16 lg:py-32 text-slate-900"
+        className="  flex flex-col gap-8 px-16 pb-16 md:py-16 lg:py-32 text-slate-900"
       >
         <p className="text-xl  lg:text-2xl font-bold">
           راهی اسان برای سفارش دادن
@@ -169,7 +169,7 @@ function InformationComp() {
           </p>
         </div>
       </div>
-      <div className="order-1 lg:order-2 w-11/12 lg:w-full flex justify-center items-center">
+      <div className=" w-11/12 lg:w-full flex justify-center items-center">
         <img src={heroImg} alt="hero" className="w-9/12 md:w-full" />
       </div>
     </section>

@@ -11,10 +11,10 @@ const items = [
   { display: "سبد خرید", to: "/cart" },
   { display: "تماس با ما", to: "/contact" },
 ];
-const Header = () => {
+const Header = ({ activeCart, setActiveCart }) => {
   const [active, setActive] = useState(true);
   return (
-    <header className="flex justify-between px-4 md:px-0 md:justify-around items-center shadow-lg py-2 bg-[#eee]">
+    <header className="fixed w-full z-50 flex justify-between px-4 md:px-0 md:justify-around items-center shadow-lg py-2 bg-[#eee]">
       {/* this section is left logo */}
       <div className="flex flex-col items-center">
         <img src={logo} alt="logo" className="w-12" />
@@ -47,8 +47,11 @@ const Header = () => {
         </div>
       </div>
       {/* right section of navigation */}
-      <div className="flex text-slate-900 ">
-        <Link className="flex mr-4 relative" to="/cart">
+      <div
+        className="flex text-slate-900 "
+        onClick={() => setActiveCart(!activeCart)}
+      >
+        <Link className="flex mr-4 relative" to="/">
           <FaShoppingCart />
           <span className="cart-span text-orange-600 font-bold">2</span>
         </Link>

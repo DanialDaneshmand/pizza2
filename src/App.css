@@ -60,3 +60,10 @@
     padding: 4px 6px;
     border-radius: 3px;
 }
+
+/* styles of cart component */
+
+.cart__bg{
+    background-color: rgba(0,0,0,.525);
+    z-index: 200;
+}
