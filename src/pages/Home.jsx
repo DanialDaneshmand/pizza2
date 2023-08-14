@@ -18,6 +18,7 @@ import ProductList from "../components/ProductList/ProductList";
 
 import networkImg from "../assets/images/network.png";
 import TestImonialSlider from "../components/UI/TestImonialSlider";
+import { useDispatch, useSelector } from "react-redux";
 
 const featureData = [
   {

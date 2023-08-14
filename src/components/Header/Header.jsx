@@ -4,6 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 import { FaBars } from "react-icons/fa";
 import { FaUserPlus } from "react-icons/fa";
+import { useSelector } from "react-redux";
 
 const items = [
   { display: "خانه ", to: "/" },
@@ -13,6 +14,8 @@ const items = [
 ];
 const Header = ({ activeCart, setActiveCart }) => {
   const [active, setActive] = useState(true);
+  const cart = useSelector((state) => state.cart);
+
   return (
     <header className="fixed w-full z-50 flex justify-between px-4 md:px-0 md:justify-around items-center shadow-lg py-2 bg-[#eee]">
       {/* this section is left logo */}
@@ -47,13 +50,14 @@ const Header = ({ activeCart, setActiveCart }) => {
         </div>
       </div>
       {/* right section of navigation */}
-      <div
-        className="flex text-slate-900 "
-        onClick={() => setActiveCart(!activeCart)}
-      >
-        <Link className="flex mr-4 relative" to="/">
+      <div className="flex text-slate-900 ">
+        <Link
+          className="flex mr-4 relative"
+          to="/"
+          onClick={() => setActiveCart(!activeCart)}
+        >
           <FaShoppingCart />
-          <span className="cart-span text-orange-600 font-bold">2</span>
+          <span className="cart-span text-orange-600 font-bold text-sm inline-block py-4">{cart.length}</span>
         </Link>
         <Link className="mr-2" to="/login">
           <FaUserPlus />
