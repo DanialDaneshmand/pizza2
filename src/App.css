@@ -65,5 +65,24 @@
 
 .cart__bg{
     background-color: rgba(0,0,0,.525);
-    z-index: 200;
+    z-index: 2000;
+}
+
+/* styles of All foods page */
+
+.title__container{
+    background-color: rgba(0, 0, 0, .725);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.title{
+    z-index: 999;
+    position: absolute;
+    top: 200px;
+    left: 180px;
+    font-size: 50px;
+    color: #fff;
 }

@@ -130,28 +130,28 @@ function InformationComp() {
   return (
     <section className="grid lg:grid-cols-2 pt-32">
       <div
-        style={{ direction: "rtl" }}
+        
         className="  flex flex-col gap-8 px-16 pb-16 md:py-16 lg:py-32 text-slate-900"
       >
         <p className="text-xl  lg:text-2xl font-bold">
-          راهی اسان برای سفارش دادن
+          Easy way to make an order
         </p>
         <p className="text-2xl  lg:text-4xl font-bold">
-          <span className="text-orange-600">گرسنه ای ؟</span>یه لحظه صبر کنی غذا{" "}
-          <span className="text-orange-600">پشت دره</span>
+          <span className="text-orange-600"> Hungry ?</span>just wait food at
+          <span className="text-orange-600"> your door</span>
         </p>
         <p className=" text-gray-500" style={{ maxWidth: "550px" }}>
-          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
-          استفاده از طراحان است، چاپگرها و متون بلکه از طراحان گرافیک است از
-          طراحان گرافیک است
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis minima
+          porro, pariatur rem debitis nostrum Omnis minima porro porro,
+          pariatur?
         </p>
         <div className="flex gap-8 items-center">
-          <button className="text-sm hover:bg-slate-800 rounded-lg bg-orange-600 text-white py-3 px-4 ">
-            حالا سفارش دهید
+          <button className="text-sm hover:bg-slate-800 rounded-lg bg-orange-600 text-white py-3 px-8 ">
+            Order Now
           </button>
-          <button className="font-bold border border-orange-600 text-orange-600 py-2 px-4 rounded-lg">
+          <button className="font-bold border border-orange-600 text-orange-600 py-2 px-8 rounded-lg">
             <Link to="/foods" className="text-sm ">
-              مشاهده غذاها
+              All Foods
             </Link>
           </button>
         </div>
@@ -160,13 +160,13 @@ function InformationComp() {
             <span className="p-1 inline-block bg-orange-600 text-white rounded-full">
               <FaShieldHalved />
             </span>
-            <span className="text-sm ">پرداختی ایمن</span>
+            <span className="text-sm "> 100% secure checkout</span>
           </p>
           <p className="flex gap-1 items-center">
             <span className="p-1 inline-block bg-orange-600 text-white rounded-full">
               <FaCar />
             </span>
-            <span>پیک رایگان</span>
+            <span> No shiping charge</span>
           </p>
         </div>
       </div>
@@ -210,10 +210,10 @@ function CommentsComp() {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
           quos commodi dolorem, minima placeat ullam? minima placeat ullam?
         </p>
-        <TestImonialSlider/>
+        <TestImonialSlider />
       </div>
       <div className="flex justify-center order-1 lg:order-2">
-        <img src={networkImg} alt="network" className="lg:w-full w-10/12"/>
+        <img src={networkImg} alt="network" className="lg:w-full w-10/12" />
       </div>
     </section>
   );

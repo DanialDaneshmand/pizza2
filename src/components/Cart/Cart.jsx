@@ -21,9 +21,11 @@ function Cart({ activeCart, setActiveCart }) {
           </span>
         </div>
         {
-          cart.map(item=>(
+          cart.length?cart.map(item=>(
             <CartItem key={item.id} product={item}/>
-          ))
+          )):<div className="text-center mt-8">
+            <p className="text-lg font-bold">no item added to the cart !</p>
+          </div>
         }
         <div className=" px-4 bg-orange-600  py-6 w-full fixed bottom-0">
           <div className="flex ">
