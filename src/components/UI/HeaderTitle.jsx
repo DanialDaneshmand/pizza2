@@ -1,6 +1,7 @@
 import React from "react";
+import bg from "../../assets/images/bg.jpg";
 
-function HeaderTitle({title}) {
+function HeaderTitle({ title }) {
   return (
     <>
       <div className="w-full h-[400px] relative" style={{ overflow: "hidden" }}>
