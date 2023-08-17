@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import products from "../assets/fake-data/products";
 import { Link, NavLink, Outlet, useParams } from "react-router-dom";
-import bg from "../assets/images/bg.jpg";
 import HeaderTitle from "../components/UI/HeaderTitle";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../Redux/Cart/CartActions";
+import ProductList from "../components/ProductList/ProductList";
 
 function FoodDetail() {
   const params = useParams();
@@ -16,20 +16,38 @@ function FoodDetail() {
       <HeaderTitle title={newProduct.title} />
       <DetailComp product={newProduct} />
       <div className="w-full flex justify-center mt-16">
-        
-          <div className="w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-center">
           <div className="w-10/12 border-b pb-2">
-          <button>
-            <NavLink className={active=>active.isActive?'text-lg font-bold text-orange-600':'text-lg font-bold'} to={`/foods/${id}/review`}>Review</NavLink>
-          </button>
-          <button>
-            <NavLink className={active=>active.isActive?'text-lg font-bold text-orange-600 ml-8':'text-lg font-bold ml-8'} to={`/foods/${id}/description`}>Description</NavLink>
-          </button>
+            <button>
+              <NavLink
+                className={(active) =>
+                  active.isActive
+                    ? "text-lg font-bold text-orange-600"
+                    : "text-lg font-bold"
+                }
+                to={`/foods/${id}/review`}
+              >
+                Review
+              </NavLink>
+            </button>
+            <button>
+              <NavLink
+                className={(active) =>
+                  active.isActive
+                    ? "text-lg font-bold text-orange-600 ml-8"
+                    : "text-lg font-bold ml-8"
+                }
+                to={`/foods/${id}/description`}
+              >
+                Description
+              </NavLink>
+            </button>
           </div>
           <Outlet />
-          </div>
-        
+        </div>
       </div>
+
+      <YouMightLikeComp />
     </section>
   );
 }
@@ -108,6 +126,22 @@ function DetailComp({ product }) {
           </button>
         )}
       </div>
+    </div>
+  );
+}
+
+function YouMightLikeComp() {
+  const [filteredProducts,setFilteredProducts]=useState([]);
+  useEffect(()=>{
+    const updatedProducts=products.filter(p=>p.category==='Pizza');
+    setFilteredProducts(updatedProducts)
+  },[])
+  return (
+    <div className="my-16">
+      <div className="text-center">
+        <p className="text-xl font-bold ">You might also like</p>
+      </div>
+      <ProductList filteredProducts={filteredProducts}/>
     </div>
   );
 }
