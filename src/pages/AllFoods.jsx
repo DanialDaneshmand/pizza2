@@ -4,6 +4,8 @@ import products from "../assets/fake-data/products";
 import Product from "../components/UI/Product";
 import Select from "react-select";
 import _ from "lodash";
+import { FaSearch } from "react-icons/fa";
+import HeaderTitle from "../components/UI/HeaderTitle";
 
 const options = [
   { value: "", label: "Default" },
@@ -21,13 +23,7 @@ function AllFoods() {
 
   return (
     <section>
-      <div className="w-full h-[400px] relative" style={{ overflow: "hidden" }}>
-        <img src={bg} alt="pizza" />
-        <div className="w-full h-[400px] title__container  "></div>
-      </div>
-      <div className="text-center title">
-        <p>All Foods</p>
-      </div>
+      <HeaderTitle title="All Foods" />
       <div>
         <FilterComp setFilteredProducts={setFilteredProducts} />
         <Foods filteredProducts={filteredProducts} />
@@ -89,24 +85,24 @@ function FilterComp({ setFilteredProducts }) {
     }
   };
   return (
-    <div className="grid grid-cols-2 py-16">
-      <div>
+    <div className="grid lg:grid-cols-2 py-16">
+      <div className="order-2 lg:order-1 flex justify-center items-center">
         <input
-          className="border w-8/12 ml-32 py-2 px-4 rounded-md"
+          className="border w-6/12 lg:w-8/12 lg:ml-32 py-2 px-4 rounded-md"
           type="text"
           value={inputValue}
           onChange={inputChangeHandler}
           placeholder="i'm looking for ..."
           style={{ outline: "none" }}
         />
+        <FaSearch className="search" />
       </div>
-      <div>
+      <div className="order-1 lg:order-2 flex justify-center mb-8 lg:mb-0 ">
         <Select
           value={selectedOption}
           onChange={selectChangeHandler}
           options={options}
-          className="w-5/12 ml-64
-          "
+          className="lg:w-5/12 w-4/12   "
         />
       </div>
     </div>

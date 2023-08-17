@@ -6,14 +6,16 @@ import { Link } from "react-router-dom";
 function Product({ product }) {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
-  const { title, image01, price } = product;
+  const { title, image01, price ,id} = product;
   const checkCart = () => {
     return cart.find((p) => p.id === product.id);
   };
   return (
     <div className="border rounded flex flex-col items-center pt-2">
       <img src={image01} alt="" className="w-8/12 " />
-      <p className="text-center font-bold mt-6">{title}</p>
+      <p className="text-center font-bold mt-6">
+        <Link to={`/foods/${id}`}>{title}</Link>
+      </p>
       <div className="flex justify-around items-center my-4 w-full">
         <p className="font-bold text-orange-600">{price} $</p>
         {checkCart() ? (
