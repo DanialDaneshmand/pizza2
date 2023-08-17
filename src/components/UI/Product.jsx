@@ -12,7 +12,7 @@ function Product({ product }) {
   };
   return (
     <div className="border rounded flex flex-col items-center pt-2">
-      <img src={image01} alt="" className="w-8/12 " />
+      <Link to={`/foods/${id}`} className="flex justify-center"><img src={image01} alt="" className="w-8/12 " /></Link>
       <p className="text-center font-bold mt-6">
         <Link to={`/foods/${id}`}>{title}</Link>
       </p>
