@@ -10,6 +10,7 @@ import Checkout from "../pages/Checkout";
 import Payment from "../pages/Payment";
 import Login from "../pages/Login";
 import Rigester from "../pages/Rigester";
+import Contact from "../pages/Contact";
 
 function Routess() {
   return (
@@ -18,6 +19,7 @@ function Routess() {
         <Route path="/" element={<Home />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/rigester" element={<Rigester />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/checkout" element={<Checkout />} />

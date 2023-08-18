@@ -21,7 +21,7 @@ function Cart({ activeCart, setActiveCart }) {
             <FaRegTimesCircle />
           </span>
         </div>
-        <div style={{overflow:'scroll'}}>
+        <div >
         {
           cart.length?cart.map(item=>(
             <CartItem key={item.id} product={item}/>

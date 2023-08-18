@@ -43,7 +43,7 @@ function CartPage() {
       </div>
       </div>
       
-      :<div className="w-full h-screen flex justify-center py-16">
+      :<div className="w-full h-64 flex justify-center py-16">
       <p className="text-xl font-bold">No item added to cart</p>
       </div>
       }
