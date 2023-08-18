@@ -31,11 +31,7 @@ function CartPage() {
           </div>
         </div>
         <CartItems cart={cart} />
-      </div>:<div className="w-full h-screen flex justify-center py-16">
-      <p className="text-xl font-bold">No item added to cart</p>
-      </div>
-      }
-      <div className="w-9/12 ">
+        <div className="w-9/12 mt-16">
         <p className="text-lg">Subtotal: <span className="text-xl text-orange-600">{total}</span> $</p>
         <p className="text-sm text-gray-500 mt-1">
           Texas and Shiping will calculate at checkout
@@ -45,6 +41,13 @@ function CartPage() {
           <button className="border border-orange-600 bg-orange-600 text-white py-1 px-4 rounded-md"><Link to='/checkout'>Proceed To Checkout</Link></button>
         </div>
       </div>
+      </div>
+      
+      :<div className="w-full h-screen flex justify-center py-16">
+      <p className="text-xl font-bold">No item added to cart</p>
+      </div>
+      }
+      
     </section>
   );
 }

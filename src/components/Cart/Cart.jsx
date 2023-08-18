@@ -33,7 +33,7 @@ function Cart({ activeCart, setActiveCart }) {
         <div className=" px-4 bg-orange-600  py-6 w-full fixed bottom-0">
           <div className="flex ">
             <p className="text-white ">Total Price : <span>{total} $</span></p>
-            <Link to="/checkout" className="ml-32">
+            <Link to="/checkout" className="ml-32" onClick={()=>setActiveCart(false)}>
               <button className="bg-white text-orange-600 py-1 px-4 text-sm rounded">
                 Checkout
               </button>
