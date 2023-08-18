@@ -15,19 +15,19 @@ function CartPage() {
         cart.length!==0?<div className="w-9/12 my-16">
         <div className="flex w-full border-b border-slate-900">
           <div className="w-2/12 border flex justify-center items-center py-2">
-            <p className="text-lg ">Image</p>
+            <p className="text-sm md:text-lg ">Image</p>
           </div>
           <div className="w-4/12 border flex justify-center items-center py-2">
-            <p className="text-lg ">Product Title</p>
+            <p className="text-sm md:text-lg ">Product Title</p>
           </div>
           <div className="w-2/12 border flex justify-center items-center py-2">
-            <p className="text-lg ">Price</p>
+            <p className="text-sm md:text-lg ">Price</p>
           </div>
           <div className="w-2/12 border flex justify-center items-center py-2">
-            <p className="text-lg ">Quantity</p>
+            <p className="text-sm md:text-lg ">Quantity</p>
           </div>
           <div className="w-2/12 border flex justify-center items-center py-2">
-            <p className="text-lg ">Delete</p>
+            <p className="text-sm md:text-lg ">Delete</p>
           </div>
         </div>
         <CartItems cart={cart} />
@@ -36,9 +36,9 @@ function CartPage() {
         <p className="text-sm text-gray-500 mt-1">
           Texas and Shiping will calculate at checkout
         </p>
-        <div className="flex gap-4 mt-4">
-          <button className="border border-orange-600 bg-orange-600 text-white py-1 px-4 rounded-md"><Link to='/'>Continue shopping </Link></button>
-          <button className="border border-orange-600 bg-orange-600 text-white py-1 px-4 rounded-md"><Link to='/checkout'>Proceed To Checkout</Link></button>
+        <div className="flex md:flex-row flex-col gap-4 mt-4 w-full">
+          <button className="md:w-auto w-9/12 border border-orange-600 bg-orange-600 text-white py-1 px-2 md:px-4 rounded-md "><Link to='/'>Continue shopping </Link></button>
+          <button className="md:w-auto w-9/12 border border-orange-600 bg-orange-600 text-white py-1 px-2 md:px-4 rounded-md"><Link to='/checkout'>Proceed To Checkout</Link></button>
         </div>
       </div>
       </div>

@@ -146,24 +146,24 @@ function InformationComp() {
           pariatur?
         </p>
         <div className="flex gap-8 items-center">
-          <button className="text-sm hover:bg-slate-800 rounded-lg bg-orange-600 text-white py-3 px-8 ">
+          <button className="text-sm hover:bg-slate-800 rounded-lg bg-orange-600 text-white py-2 md:py-3 px-3 md:px-8 ">
             Order Now
           </button>
-          <button className="font-bold border border-orange-600 text-orange-600 py-2 px-8 rounded-lg">
+          <button className="font-bold border border-orange-600 text-orange-600 py-1 md:py-2 px-3 md:px-8 rounded-lg">
             <Link to="/foods" className="text-sm ">
               All Foods
             </Link>
           </button>
         </div>
-        <div className="flex gap-16">
-          <p className="flex gap-2 items-center">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-16">
+          <p className="flex md:gap-2 items-center">
             <span className="p-1 inline-block bg-orange-600 text-white rounded-full">
               <FaShieldHalved />
             </span>
             <span className="text-sm "> 100% secure checkout</span>
           </p>
           <p className="flex gap-1 items-center">
-            <span className="p-1 inline-block bg-orange-600 text-white rounded-full">
+            <span className="p-1 inline-block bg-orange-600 text-white rounded-full ">
               <FaCar />
             </span>
             <span> No shiping charge</span>
@@ -189,7 +189,7 @@ function HotPizzaComp() {
       <div className="text-center text-2xl md:text-4xl font-bold">
         Hot Pizza
       </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 px-32 mt-16">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 px-16 sm:px-32 mt-16">
         {hotPizaa.map((item, index) => (
           <Product key={index} product={item} />
         ))}

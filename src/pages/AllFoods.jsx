@@ -36,7 +36,7 @@ export default AllFoods;
 
 function Foods({ filteredProducts }) {
   return (
-    <div className="grid mb-32 md:grid-cols-2 lg:grid-cols-4 gap-8 px-32 ">
+    <div className="grid mb-32 md:grid-cols-2 lg:grid-cols-4 gap-8 px-16 md:px-32 ">
       {filteredProducts.map((product, index) => (
         <Product product={product} key={index} />
       ))}

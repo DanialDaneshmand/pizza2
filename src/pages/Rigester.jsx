@@ -43,7 +43,7 @@ function Rigester() {
             placeholder="Enter your password"
             onChange={changeHandler}
           />
-          <button onClick={checkInputs} className="border-orange-600 bg-orange-600 mt-4 py-2 px-4 rounded text-white w-4/12 md:w-3/12">
+          <button onClick={checkInputs} className="border-orange-600 bg-orange-600 mt-4 py-2 px-4 rounded text-white w-6/12 md:w-3/12">
             Sign up
           </button>
         </div>
