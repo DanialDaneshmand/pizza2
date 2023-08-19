@@ -1,16 +1,21 @@
 import React, { useState } from "react";
 import logo from "../../assets/images/res-logo.png";
 import { Link, NavLink } from "react-router-dom";
-import { FaShoppingCart } from "react-icons/fa";
-import { FaBars } from "react-icons/fa";
-import { FaUserPlus } from "react-icons/fa";
 import { useSelector } from "react-redux";
+import {
+  FaShoppingCart,
+  FaBars,
+  FaUserPlus,
+  FaHome,
+  FaHamburger,
+  FaHeadphones,
+} from "react-icons/fa";
 
 const items = [
-  { display: "Home ", to: "/" },
-  { display: "Foods ", to: "/foods" },
-  { display: " Cart", to: "/cart" },
-  { display: " Contact", to: "/contact" },
+  { display: "Home ", to: "/" ,icon:<FaHome/>},
+  { display: "Foods ", to: "/foods" ,icon:<FaHamburger/>},
+  { display: " Cart", to: "/cart",icon:< FaShoppingCart/>},
+  { display: " Contact", to: "/contact" ,icon:<FaHeadphones/>},
 ];
 const Header = ({ activeCart, setActiveCart }) => {
   const [active, setActive] = useState(true);
@@ -24,9 +29,10 @@ const Header = ({ activeCart, setActiveCart }) => {
         <p className="text-l font-bold">Tasty Treat</p>
       </div>
       {/* middle section */}
+      <div className="w-9/12 flex justify-center  ">
       <div
         onClick={() => setActive(true)}
-        className={`flex justify-between  md:w-5/12 lg:w-4/12 ${
+        className={`   w-8/12 ${
           active ? "md:block hidden" : "menu"
         } `}
       >
@@ -40,8 +46,8 @@ const Header = ({ activeCart, setActiveCart }) => {
               to={item.to}
               className={(active) =>
                 active.isActive
-                  ? "font-bold text-orange-600 mr-0 md:mr-4 mt-4 md:mt-0"
-                  : "text-slate-900 hover:text-orange-600 font-bold  mr-0 md:mr-4 mt-4 md:mt-0"
+                  ? "font-bold text-orange-600  mt-4 md:mt-0 text-lg bg-orange-200 md:bg-white rounded py-2 px-4"
+                  : "text-slate-900 hover:text-orange-600 font-bold   mt-4 md:mt-0 text-lg py-2 px-4"
               }
             >
               {item.display}
@@ -49,20 +55,21 @@ const Header = ({ activeCart, setActiveCart }) => {
           ))}
         </div>
       </div>
+      </div>
       {/* right section of navigation */}
       <div className="flex text-slate-900 ">
         <Link
           className="flex mr-4 relative"
           onClick={() => setActiveCart(!activeCart)}
         >
-          <FaShoppingCart />
+          <FaShoppingCart className="text-xl"/>
           <span className="cart-span text-orange-600 font-bold text-sm inline-block py-4">{cart.length}</span>
         </Link>
         <Link className="mr-2" to="/login">
-          <FaUserPlus />
+          <FaUserPlus  className="text-xl"/>
         </Link>
         <span className="md:hidden" onClick={() => setActive(!active)}>
-          <FaBars />
+          <FaBars  className="text-xl"/>
         </span>
       </div>
     </header>

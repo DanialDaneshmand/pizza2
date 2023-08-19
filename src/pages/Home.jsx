@@ -201,9 +201,9 @@ function HotPizzaComp() {
 function CommentsComp() {
   return (
     <section className="grid grid-cols-1 lg:grid-cols-2 my-32 items-center">
-      <div className="px-28 order-2 lg:order-1">
+      <div className="md:px-28 px-16 order-2 lg:order-1">
         <p className="text-orange-600 text-lg font-bold">Testimonial</p>
-        <p className="md:text-3xl text-2xl font-bold my-6">
+        <p className="md:text-3xl text-xl font-bold my-6">
           What our <span className="text-orange-600">customers</span> are saying
         </p>
         <p className="text-sm text-gray-500 mb-16">
