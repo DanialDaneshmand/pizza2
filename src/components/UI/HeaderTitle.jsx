@@ -13,7 +13,7 @@ function HeaderTitle({ title }) {
         <div className="w-full h-[400px] title__container  "></div>
       </div>
       <div className="text-center title">
-        <p className="lg:text-4xl sm:text-2xl text-xl">{title}</p>
+        <p className="lg:text-4xl text-2xl ">{title}</p>
       </div>
     </>
   );

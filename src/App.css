@@ -81,7 +81,7 @@
 .title{
     z-index: 999;
     position: absolute;
-    top: 200px;
+    top: 225px;
     left: 50px;
     
     color: #fff;
@@ -90,3 +90,4 @@
 .search{
     margin-left: -25px;
 }
+

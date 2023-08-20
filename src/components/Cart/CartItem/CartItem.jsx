@@ -24,7 +24,7 @@ function CartItem({ product }) {
           onClick={() => dispatch(increment(product))}
           className="py-1 px-3 text-sm rounded-l bg-red-200 text-orange-600"
         >
-          +
+          -
         </button>
         <button className="py-1 px-3 text-sm bg-red-200 text-orange-600">
           {product.quantity}
@@ -33,7 +33,7 @@ function CartItem({ product }) {
           onClick={() => dispatch(decrement(product))}
           className="py-1 px-3 text-sm rounded-r bg-red-200 text-orange-600"
         >
-          -
+          +
         </button>
       </div>
       <div onClick={() => dispatch(remove(product))} className="text-red-700 text-sm">

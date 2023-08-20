@@ -19,13 +19,13 @@ function Product({ product }) {
       <div className="flex justify-around items-center my-4 w-full">
         <p className="font-bold text-orange-600">{price} $</p>
         {checkCart() ? (
-          <button className="bg-orange-600 rounded text-sm py-2 px-6 text-white">
+          <button className="bg-orange-600 rounded text-sm py-1 md:py-2 px-2 md:px-6 text-white">
             <Link to="/cart">go to cart</Link>
           </button>
         ) : (
           <button
             onClick={() => dispatch(addToCart(product))}
-            className="bg-orange-600 rounded text-sm py-2 px-6 text-white"
+            className="bg-orange-600 rounded text-sm py-1 md:py-2 px-2 md:px-6 text-white"
           >
             Add To Cart
           </button>

@@ -36,7 +36,7 @@ export default AllFoods;
 
 function Foods({ filteredProducts }) {
   return (
-    <div className="grid mb-32 md:grid-cols-2 lg:grid-cols-4 gap-8 px-32 ">
+    <div className="grid mb-32 md:grid-cols-2 lg:grid-cols-4 gap-8 px-16 md:px-32 ">
       {filteredProducts.map((product, index) => (
         <Product product={product} key={index} />
       ))}
@@ -88,7 +88,7 @@ function FilterComp({ setFilteredProducts }) {
     <div className="grid lg:grid-cols-2 py-16">
       <div className="order-2 lg:order-1 flex justify-center items-center">
         <input
-          className="border w-6/12 lg:w-8/12 lg:ml-32 py-2 px-4 rounded-md"
+          className="border w-8/12 md:w-6/12 lg:w-9/12 lg:ml-32 py-2 px-4 rounded-md"
           type="text"
           value={inputValue}
           onChange={inputChangeHandler}
@@ -102,7 +102,7 @@ function FilterComp({ setFilteredProducts }) {
           value={selectedOption}
           onChange={selectChangeHandler}
           options={options}
-          className="lg:w-5/12 w-4/12   "
+          className=" w-6/12 md:w-4/12   "
         />
       </div>
     </div>

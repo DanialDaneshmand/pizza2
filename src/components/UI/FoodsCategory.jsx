@@ -7,15 +7,15 @@ function FoodsCategory({filter,clickHandler}) {
   return (
     <section>
       <div className="text-center mb-16">
-        <p className="text-4xl font-bold">Popular Foods</p>
+        <p className="text-xl sm:text-2xl md:text-4xl font-bold">Popular Foods</p>
       </div>
       <div className="flex justify-center flex-col items-center mb-16">
-        <div className="bg-orange-600 rounded py-6 w-9/12 flex justify-center items-center gap-6">
+        <div className="bg-orange-600 rounded py-6 w-11/12 sm:w-9/12 flex justify-center items-center gap-6">
           <button
             onClick={() => clickHandler("all")}
-            className={`${filter === "all" && "active"}`}
+            className={`${filter === "all" && "active"} text-sm`}
           >
-            All Foods
+             Foods
           </button>
           <button
             onClick={() => clickHandler("Burger")}

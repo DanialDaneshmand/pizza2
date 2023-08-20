@@ -15,7 +15,7 @@ function Cart({ activeCart, setActiveCart }) {
         activeCart ? "fixed top-0 right-0" : "hidden"
       }`}
     >
-      <div className="w-[400px] h-full bg-white fixed right-0 top-0">
+      <div className="w-full sm:w-[400px] h-full bg-white fixed right-0 top-0">
         <div className="p-6">
           <span className="text-lg" onClick={() => setActiveCart(!activeCart)}>
             <FaRegTimesCircle />
