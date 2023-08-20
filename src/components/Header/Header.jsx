@@ -65,7 +65,11 @@ const Header = ({ activeCart, setActiveCart }) => {
           <FaShoppingCart className="text-xl"/>
           <span className="cart-span text-orange-600 font-bold text-sm inline-block py-4">{cart.length}</span>
         </Link>
+<<<<<<< HEAD
         <Link className="" to="/login">
+=======
+        <Link className="mr-2" to="/login">
+>>>>>>> cbb511e41541e29c199fa575baf333e7b416376a
           <FaUserPlus  className="text-xl"/>
         </Link>
         <span className="md:hidden" onClick={() => setActive(!active)}>
