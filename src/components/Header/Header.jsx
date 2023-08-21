@@ -25,8 +25,8 @@ const Header = ({ activeCart, setActiveCart }) => {
     <header style={{zIndex:'1000'}} className="fixed w-full  flex justify-between px-4 md:px-0 md:justify-around items-center shadow-lg py-2 bg-[#eee]">
       {/* this section is left logo */}
       <div className="flex flex-col items-center text-center">
-        <img src={logo} alt="logo" className=" w-8/12 " />
-        <p className="md:text-lg text-sm font-bold w-full">Tasty Treat</p>
+        <img src={logo} alt="logo" className=" w-8/12 md:w-6/12" />
+        <p className="md:text-lg text-sm sm:font-bold w-full">Tasty Treat</p>
       </div>
       {/* middle section */}
       <div className="w-9/12 flex justify-center  ">
