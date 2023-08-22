@@ -21,7 +21,7 @@ function CartItem({ product }) {
       </div>
       <div>
         <button
-          onClick={() => dispatch(increment(product))}
+          onClick={() => dispatch(decrement(product))}
           className="py-1 px-3 text-sm rounded-l bg-red-200 text-orange-600"
         >
           -
@@ -30,7 +30,7 @@ function CartItem({ product }) {
           {product.quantity}
         </button>
         <button
-          onClick={() => dispatch(decrement(product))}
+          onClick={() => dispatch(increment(product))}
           className="py-1 px-3 text-sm rounded-r bg-red-200 text-orange-600"
         >
           +
